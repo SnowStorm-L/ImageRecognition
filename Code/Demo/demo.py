@@ -3,7 +3,7 @@
 # @Time    : 2018/6/11 PM5:34
 # @Author  : L
 # @Email   : L862608263@163.com
-# @File    : Demo.py
+# @File    : demo.py
 # @Software: PyCharm
 
 # 多维数组处理库
