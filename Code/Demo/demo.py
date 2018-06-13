@@ -74,7 +74,7 @@ class ImageRecognition:
 
     def fusion_image(self, g):
         """合成图片"""
-        new_g = [self._split_checkcode(i) for i in g]
+        new_g = [self.__split_checkcode(i) for i in g]
         return numpy.vstack(new_g)
 
     def verify_length(self, image_np_deal_list, every_length):
@@ -116,7 +116,7 @@ class ImageRecognition:
                     return self.verify_length(g, d)
         return g
 
-    def _split_checkcode(self, one):
+    def __split_checkcode(self, one):
         for i in range(18 - one.shape[1]):
             if i % 2:
                 one = numpy.hstack((numpy.array([1] * 27)[:, numpy.newaxis], one))
@@ -185,12 +185,12 @@ if __name__ == "__main__":
     new_yy = [y_class2[i] for i in y]
 
     # 通过上面的图确定的系数
-
     def model_training(a, new_yy, i):
         svc = svm.SVC(gamma=0.001, C=100)
         svc.fit(a[:i * 4], numpy.array(new_yy[:i * 4]))
         print('识别字符准确率 ', svc.score(a[i * 4:], numpy.array(new_yy[i * 4:])))
         return svc.predict(a[i * 4:]), numpy.array(new_yy[i * 4:])
+
 
     y_predict, y_true = model_training(x, new_yy, 140)
     y_predict_class = [y_class[i] for i in y_predict]
