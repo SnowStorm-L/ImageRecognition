@@ -88,3 +88,4 @@ if __name__ == "__main__":
     # image_deal.image_clear_noise(grayscale_image, 50, 4, 4)
     # grayscale_image.show()
 
+
