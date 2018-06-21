@@ -8,8 +8,7 @@ import numpy as np
 from PIL import Image
 from captcha.image import ImageCaptcha  # pip install captcha
 
-import Code.Demo.capt
-from Code.Demo.capt.cfg import gen_char_set
+from Code.Demo.capt.cfg import gen_char_set, workspace
 
 
 # 验证码一般都无视大小写；验证码长度4个字符
@@ -75,7 +74,7 @@ def __gen_and_save_image():
 
         image_name = '__%s__%s.png' % (text, uuid.uuid1().hex)
 
-        img_root = path.join(capt.cfg.workspace, 'train')
+        img_root = path.join(workspace, 'train')
         image_file = path.join(img_root, image_name)
 
         im.save(image_file)

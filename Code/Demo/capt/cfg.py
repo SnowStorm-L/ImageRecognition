@@ -14,7 +14,7 @@ ALPHABET = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
             'v', 'w', 'x', 'y', 'z']
 
-gen_char_set = number + ALPHABET  # 用于生成验证码的数据集
+gen_char_set = number + ALPHABET + alphabet  # 用于生成验证码的数据集
 # 有先后的顺序的
 
 # 图像大小
@@ -30,12 +30,14 @@ CHAR_SET_LEN = len(gen_char_set)
 
 print('CHAR_SET_LEN:', CHAR_SET_LEN)
 
+# 桌面上创建这几个文件夹
 home_root = '/Users/l/desktop'  # 在不同操作系统下面Home目录不一样
-workspace = os.path.join(home_root, 'work/crack/my-capt-data/capt-python-36')  # 用于工作的训练数据集
+workspace = os.path.join(home_root, 'work/crack/my_capt_data')  # 用于工作的训练数据集
 model_path = os.path.join(home_root, 'work/crack/model')
 model_tag = 'crack_capcha.model'
 save_model = os.path.join(model_path, model_tag)
 
+print('workspace:', workspace)
 print('model_path:', save_model)
 
 # 输出日志 tensorboard监控的内容

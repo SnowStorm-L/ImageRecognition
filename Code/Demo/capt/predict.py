@@ -10,7 +10,6 @@ from Code.Demo.capt.cfg import MAX_CAPTCHA, CHAR_SET_LEN, model_path
 from Code.Demo.capt.cnn_sys import crack_captcha_cnn, X, keep_prob
 from Code.Demo.capt.gen_captcha import wrap_gen_captcha_text_and_image
 from Code.Demo.capt.utils import convert2gray, vec2text
-from PIL import Image
 
 
 def hack_function(sess, predict, captcha_image):
